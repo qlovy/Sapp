@@ -39,3 +39,21 @@ Prendre le meilleur des apps (Komoot, garmin Connect et Strava)
 - Komoot API, https://matteovillosio.com/post/kompy/
 - Garmin Connect API, https://github.com/cyberjunky/python-garminconnect
 - Strava API, https://pypi.org/project/stravalib/
+
+## Initialisation du projet
+### 1. Installer Python
+
+Doc: https://www.python.org/downloads/
+
+### 2. Initialiser de l'environnement virtuel
+Dans le dossier du projet:
+
+Doc: https://docs.python.org/fr/3.9/library/venv.html
+
+$> mkdir .venv
+
+$> py -m venv .venv
+
+### 3. Installer les libraires
+
+voir section Ressource, etape 1
