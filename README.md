@@ -1,1 +1,41 @@
 # Sapp
+
+## But
+
+Prendre le meilleur des apps (Komoot, garmin Connect et Strava)
+
+### Détail des fonctionnalités (sur les données de l’utilisateur)
+
+#### Komoot
+
+- Pente du parcours
+
+#### Garmin Connect
+
+- Zone FC
+- Zone puissance
+- Training effect
+
+#### Strava
+
+- Segment
+- Local legends
+- Manipulation des graphiques
+
+## Étapes
+
+1. gérer l’importation de donné
+    1. Authentification de l’utilisateur 
+        1. Variable d’environnement 
+    2. Connexion au différentes applis
+        1. Garmin Connect
+        2. Komoot
+        3. Strava 
+
+## Ressources
+
+### Étapes 1
+
+- Komoot API, https://matteovillosio.com/post/kompy/
+- Garmin Connect API, https://github.com/cyberjunky/python-garminconnect
+- Strava API, https://pypi.org/project/stravalib/
