@@ -58,7 +58,7 @@ $> py -m venv .venv
 
 Sous Windows
 
-$> .\.venv\Scripts\activate.bat
+$> .\.venv\Scripts\activate
 
 ### 4. Installer les libraires
 
