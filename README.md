@@ -63,3 +63,9 @@ $> .\.venv\Scripts\activate.bat
 ### 4. Installer les libraires
 
 voir section Ressource, etape 1
+
+## Récupération des données 
+
+L'idéal serait de récupérer les infos directement depuis l'appareil en question mais les transferts de données étant chiffré impossible de bypass l'API garmin connect
+
+Méthode a utiliser passer via l'API garmin connect
