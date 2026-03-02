@@ -1,5 +1,13 @@
 # Sapp
 
+## TODO
+
+### general
+- faire disparaître .gitignore
+
+### garminconnect
+- ajouter identification par token + stockage dans dossier data => une fois login avec .env pour la première fois
+
 ## But
 
 Prendre le meilleur des apps (Komoot, garmin Connect et Strava)
@@ -40,6 +48,8 @@ Prendre le meilleur des apps (Komoot, garmin Connect et Strava)
 - Garmin Connect API, https://github.com/cyberjunky/python-garminconnect
 - Strava API, https://pypi.org/project/stravalib/
 
+Variable d'environnement avec https://pypi.org/project/python-dotenv/
+
 ## Initialisation du projet
 ### 1. Installer Python
 
@@ -50,16 +60,26 @@ Dans le dossier du projet:
 
 Doc: https://docs.python.org/fr/3.9/library/venv.html
 
-$> mkdir .venv
+`$> mkdir .venv`
 
-$> py -m venv .venv
+`$> py -m venv .venv`
 
 ### 3. Activer environnement virtuel
 
 Sous Windows
 
-$> .\.venv\Scripts\activate
+`$> .\.venv\Scripts\activate`
 
 ### 4. Installer les libraires
 
 voir section Ressource, etape 1
+
+### 5. Définir variable d'environnement
+
+- Créer un fichier **.env**
+- Ouvrir le fichier et définir 2 variables selon cet exmample
+
+```
+GARMIN_EMAIL="email"
+GARMIN_PASSWORD="password"
+```
