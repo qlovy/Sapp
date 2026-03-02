@@ -1,2 +1,1 @@
-print("test")
-print("Quentin c'est le goat")
+import flet as ft
