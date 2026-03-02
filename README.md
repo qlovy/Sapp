@@ -54,6 +54,12 @@ $> mkdir .venv
 
 $> py -m venv .venv
 
-### 3. Installer les libraires
+### 3. Activer environnement virtuel
+
+Sous Windows
+
+$> .\venv\Scritp\activate.bat
+
+### 4. Installer les libraires
 
 voir section Ressource, etape 1
