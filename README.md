@@ -46,7 +46,7 @@ Prendre le meilleur des apps (Komoot, garmin Connect et Strava)
 
 - Komoot API, https://matteovillosio.com/post/kompy/, https://github.com/Tsadoq/kompy
 - Garmin Connect API, https://github.com/cyberjunky/python-garminconnect
-- Strava API, https://pypi.org/project/stravalib/
+- Strava API, https://pypi.org/project/stravalib/, https://github.com/stravalib/stravalib
 
 Variable d'environnement avec https://pypi.org/project/python-dotenv/
 
