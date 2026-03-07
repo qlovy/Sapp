@@ -110,21 +110,7 @@ def safe_api_call(api_method, *args, **kwargs):
     except Exception as e:
         return False, None, f"Unexpected error: {e}"
 
-
-def get_credentials():
-    """Get email and password from environment or user input."""
-    email = os.getenv("GARMIN_EMAIL")
-    password = os.getenv("GARMIN_PASSWORD")
-
-    if not email:
-        email = input("Login email: ")
-    if not password:
-        password = getpass("Enter password: ")
-
-    return email, password
-
-
-def init_api() -> Garmin | None:
+def init_api(email: str | None = None, password: str | None = None) -> Garmin | None:
     """Initialize Garmin API with authentication and token management."""
 
     """
@@ -168,7 +154,10 @@ def init_api() -> Garmin | None:
     while True:
         try:
             # Get credentials
-            email, password = get_credentials()
+            if not email:
+                email = input("Login email: ")
+            if not password:
+                password = getpass("Enter password: ")
 
             print("Logging in with credentials...")
             garmin = Garmin(
@@ -251,10 +240,10 @@ class Config:
         # Load environment variables
         self.email = os.getenv("EMAIL")
         self.password = os.getenv("PASSWORD")
-        self.tokenstore = os.getenv("GARMINTOKENS") or "~/.garminconnect"
-        self.tokenstore_base64 = (
-            os.getenv("GARMINTOKENS_BASE64") or "~/.garminconnect_base64"
-        )
+        #self.tokenstore = os.getenv("GARMINTOKENS") or "~/.garminconnect"
+        # self.tokenstore_base64 = (
+        #     os.getenv("GARMINTOKENS_BASE64") or "~/.garminconnect_base64"
+        # )
 
         # Date settings
         self.today = datetime.date.today()
@@ -267,13 +256,13 @@ class Config:
         self.start_badge = 1  # Badge related calls start counting at 1
 
         # Activity settings
-        self.activitytype = ""  # Possible values: cycling, running, swimming, multi_sport, fitness_equipment, hiking, walking, other
-        self.activityfile = "test_data/*.gpx"  # Supported file types: .fit .gpx .tcx
-        self.workoutfile = "test_data/sample_workout.json"  # Sample workout JSON file
+        # self.activitytype = ""  # Possible values: cycling, running, swimming, multi_sport, fitness_equipment, hiking, walking, other
+        # self.activityfile = "test_data/*.gpx"  # Supported file types: .fit .gpx .tcx
+        # self.workoutfile = "test_data/sample_workout.json"  # Sample workout JSON file
 
         # Export settings
-        self.export_dir = Path("your_data")
-        self.export_dir.mkdir(exist_ok=True)
+        # self.export_dir = Path("your_data")
+        # self.export_dir.mkdir(exist_ok=True)
 
 
 # Initialize configuration
@@ -2511,7 +2500,10 @@ def call_and_display(
     _display_single(f"{api_call_desc} [ERROR]", {"error": error_msg})
     return False, None
 
-
+def disconnect_api(api: Garmin):
+    """Disconnect from Garmin Connect."""
+    api.logout()
+    print("✅ Disconnected from Garmin Connect")
 
 def execute_api_call(api: Garmin, key: str) -> None:
     """Execute an API call based on the key."""
@@ -3018,7 +3010,7 @@ def execute_api_call(api: Garmin, key: str) -> None:
 
 def main():
     # Initialize API with authentication (will only prompt for credentials if needed)
-    api = init_api()
+    api = init_api(config.email, config.password)
 
     if not api:
         print("❌ Failed to initialize API. Exiting.")
