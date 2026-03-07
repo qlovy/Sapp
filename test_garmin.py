@@ -247,7 +247,9 @@ def main():
     
     data = []
 
-    get_single_activity_data(api, 2, data)
+    nb_activity_import = 2 # nombre max: 20
+
+    get_single_activity_data(api, nb_activity_import, data)
 
     f = open("./data/data.txt", "w")
     f.write(str(data))
