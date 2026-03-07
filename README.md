@@ -14,18 +14,10 @@ Prendre le meilleur des apps (Komoot, garmin Connect et Strava)
 
 ### Détail des fonctionnalités (sur les données de l’utilisateur)
 
-#### Komoot
-
 - Pente du parcours
-
-#### Garmin Connect
-
 - Zone FC
 - Zone puissance
 - Training effect
-
-#### Strava
-
 - Segment
 - Local legends
 - Manipulation des graphiques
@@ -35,18 +27,16 @@ Prendre le meilleur des apps (Komoot, garmin Connect et Strava)
 1. gérer l’importation de donné
     1. Authentification de l’utilisateur 
         1. Variable d’environnement 
-    2. Connexion au différentes applis
-        1. Garmin Connect
-        2. Komoot
-        3. Strava 
+    2. Connexion à Garmin Connect et récupération des données
+
+## Récupération des données 
+
+Via Garmin Connect (wrapper python)
 
 ## Ressources
 
 ### Étapes 1
-
-- Komoot API, https://matteovillosio.com/post/kompy/, https://github.com/Tsadoq/kompy
 - Garmin Connect API, https://github.com/cyberjunky/python-garminconnect
-- Strava API, https://pypi.org/project/stravalib/, https://github.com/stravalib/stravalib
 
 Variable d'environnement avec https://pypi.org/project/python-dotenv/
 
@@ -74,11 +64,6 @@ Sous Windows
 
 voir section Ressource, etape 1
 
-## Récupération des données 
-
-L'idéal serait de récupérer les infos directement depuis l'appareil en question mais les transferts de données étant chiffré impossible de bypass l'API garmin connect
-
-Méthode a utiliser passer via l'API garmin connect
 
 ### 5. Définir variable d'environnement
 
