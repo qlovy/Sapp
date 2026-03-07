@@ -23,6 +23,7 @@ from garminconnect import (
 import json
 import datetime
 from datetime import timedelta
+from typing import Any
 
 # Suppress garminconnect library logging to avoid tracebacks in normal operation
 logging.getLogger("garminconnect").setLevel(logging.CRITICAL)
