@@ -1,3 +1,5 @@
+# code from https://github.com/cyberjunky/python-garminconnect/tree/master, example.py & demo.py
+
 import logging
 import os
 import sys
