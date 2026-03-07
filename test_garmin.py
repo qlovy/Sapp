@@ -237,6 +237,15 @@ def get_single_activity_data(api: Garmin, nb_of_days, data) -> None:
     except Exception as e:
         print(f"❌ Error getting single activity: {e}")
 
+
+
+
+
+
+
+
+
+
 def execute_api_call(api: Garmin, key: str) -> None:
     """Execute an API call based on the key."""
     if not api:
@@ -247,26 +256,26 @@ def execute_api_call(api: Garmin, key: str) -> None:
         # Map of keys to API methods - this can be extended as needed
         api_methods = {
             # User & Profile
-            "get_full_name": lambda: call_and_display(
-                api.get_full_name,
-                method_name="get_full_name",
-                api_call_desc="api.get_full_name()",
-            ),
-            "get_unit_system": lambda: call_and_display(
-                api.get_unit_system,
-                method_name="get_unit_system",
-                api_call_desc="api.get_unit_system()",
-            ),
-            "get_user_profile": lambda: call_and_display(
-                api.get_user_profile,
-                method_name="get_user_profile",
-                api_call_desc="api.get_user_profile()",
-            ),
-            "get_userprofile_settings": lambda: call_and_display(
-                api.get_userprofile_settings,
-                method_name="get_userprofile_settings",
-                api_call_desc="api.get_userprofile_settings()",
-            ),
+            # "get_full_name": lambda: call_and_display(
+            #     api.get_full_name,
+            #     method_name="get_full_name",
+            #     api_call_desc="api.get_full_name()",
+            # ),
+            # "get_unit_system": lambda: call_and_display(
+            #     api.get_unit_system,
+            #     method_name="get_unit_system",
+            #     api_call_desc="api.get_unit_system()",
+            # ),
+            # "get_user_profile": lambda: call_and_display(
+            #     api.get_user_profile,
+            #     method_name="get_user_profile",
+            #     api_call_desc="api.get_user_profile()",
+            # ),
+            # "get_userprofile_settings": lambda: call_and_display(
+            #     api.get_userprofile_settings,
+            #     method_name="get_userprofile_settings",
+            #     api_call_desc="api.get_userprofile_settings()",
+            # ),
             # Daily Health & Activity
             "get_stats": lambda: call_and_display(
                 api.get_stats,
@@ -534,77 +543,77 @@ def execute_api_call(api: Garmin, key: str) -> None:
                 method_name="get_daily_weigh_ins",
                 api_call_desc=f"api.get_daily_weigh_ins('{config.today.isoformat()}')",
             ),
-            "add_weigh_in": lambda: add_weigh_in_data(api),
-            "set_body_composition": lambda: set_body_composition_data(api),
-            "add_body_composition": lambda: add_body_composition_data(api),
-            "delete_weigh_ins": lambda: delete_weigh_ins_data(api),
-            "delete_weigh_in": lambda: delete_weigh_in_data(api),
+            # "add_weigh_in": lambda: add_weigh_in_data(api),
+            # "set_body_composition": lambda: set_body_composition_data(api),
+            # "add_body_composition": lambda: add_body_composition_data(api),
+            # "delete_weigh_ins": lambda: delete_weigh_ins_data(api),
+            # "delete_weigh_in": lambda: delete_weigh_in_data(api),
             # Goals & Achievements
             "get_personal_records": lambda: call_and_display(
                 api.get_personal_record,
                 method_name="get_personal_record",
                 api_call_desc="api.get_personal_record()",
             ),
-            "get_earned_badges": lambda: call_and_display(
-                api.get_earned_badges,
-                method_name="get_earned_badges",
-                api_call_desc="api.get_earned_badges()",
-            ),
-            "get_adhoc_challenges": lambda: call_and_display(
-                api.get_adhoc_challenges,
-                config.start,
-                config.default_limit,
-                method_name="get_adhoc_challenges",
-                api_call_desc=f"api.get_adhoc_challenges({config.start}, {config.default_limit})",
-            ),
-            "get_available_badge_challenges": lambda: call_and_display(
-                api.get_available_badge_challenges,
-                config.start_badge,
-                config.default_limit,
-                method_name="get_available_badge_challenges",
-                api_call_desc=f"api.get_available_badge_challenges({config.start_badge}, {config.default_limit})",
-            ),
-            "get_active_goals": lambda: call_and_display(
-                api.get_goals,
-                status="active",
-                start=config.start,
-                limit=config.default_limit,
-                method_name="get_goals",
-                api_call_desc=f"api.get_goals(status='active', start={config.start}, limit={config.default_limit})",
-            ),
-            "get_future_goals": lambda: call_and_display(
-                api.get_goals,
-                status="future",
-                start=config.start,
-                limit=config.default_limit,
-                method_name="get_goals",
-                api_call_desc=f"api.get_goals(status='future', start={config.start}, limit={config.default_limit})",
-            ),
-            "get_past_goals": lambda: call_and_display(
-                api.get_goals,
-                status="past",
-                start=config.start,
-                limit=config.default_limit,
-                method_name="get_goals",
-                api_call_desc=f"api.get_goals(status='past', start={config.start}, limit={config.default_limit})",
-            ),
-            "get_badge_challenges": lambda: call_and_display(
-                api.get_badge_challenges,
-                config.start_badge,
-                config.default_limit,
-                method_name="get_badge_challenges",
-                api_call_desc=f"api.get_badge_challenges({config.start_badge}, {config.default_limit})",
-            ),
-            "get_non_completed_badge_challenges": lambda: call_and_display(
-                api.get_non_completed_badge_challenges,
-                config.start_badge,
-                config.default_limit,
-                method_name="get_non_completed_badge_challenges",
-                api_call_desc=f"api.get_non_completed_badge_challenges({config.start_badge}, {config.default_limit})",
-            ),
-            "get_inprogress_virtual_challenges": lambda: get_virtual_challenges_data(
-                api
-            ),
+            # "get_earned_badges": lambda: call_and_display(
+            #     api.get_earned_badges,
+            #     method_name="get_earned_badges",
+            #     api_call_desc="api.get_earned_badges()",
+            # ),
+            # "get_adhoc_challenges": lambda: call_and_display(
+            #     api.get_adhoc_challenges,
+            #     config.start,
+            #     config.default_limit,
+            #     method_name="get_adhoc_challenges",
+            #     api_call_desc=f"api.get_adhoc_challenges({config.start}, {config.default_limit})",
+            # ),
+            # "get_available_badge_challenges": lambda: call_and_display(
+            #     api.get_available_badge_challenges,
+            #     config.start_badge,
+            #     config.default_limit,
+            #     method_name="get_available_badge_challenges",
+            #     api_call_desc=f"api.get_available_badge_challenges({config.start_badge}, {config.default_limit})",
+            # ),
+            # "get_active_goals": lambda: call_and_display(
+            #     api.get_goals,
+            #     status="active",
+            #     start=config.start,
+            #     limit=config.default_limit,
+            #     method_name="get_goals",
+            #     api_call_desc=f"api.get_goals(status='active', start={config.start}, limit={config.default_limit})",
+            # ),
+            # "get_future_goals": lambda: call_and_display(
+            #     api.get_goals,
+            #     status="future",
+            #     start=config.start,
+            #     limit=config.default_limit,
+            #     method_name="get_goals",
+            #     api_call_desc=f"api.get_goals(status='future', start={config.start}, limit={config.default_limit})",
+            # ),
+            # "get_past_goals": lambda: call_and_display(
+            #     api.get_goals,
+            #     status="past",
+            #     start=config.start,
+            #     limit=config.default_limit,
+            #     method_name="get_goals",
+            #     api_call_desc=f"api.get_goals(status='past', start={config.start}, limit={config.default_limit})",
+            # ),
+            # "get_badge_challenges": lambda: call_and_display(
+            #     api.get_badge_challenges,
+            #     config.start_badge,
+            #     config.default_limit,
+            #     method_name="get_badge_challenges",
+            #     api_call_desc=f"api.get_badge_challenges({config.start_badge}, {config.default_limit})",
+            # ),
+            # "get_non_completed_badge_challenges": lambda: call_and_display(
+            #     api.get_non_completed_badge_challenges,
+            #     config.start_badge,
+            #     config.default_limit,
+            #     method_name="get_non_completed_badge_challenges",
+            #     api_call_desc=f"api.get_non_completed_badge_challenges({config.start_badge}, {config.default_limit})",
+            # ),
+            # "get_inprogress_virtual_challenges": lambda: get_virtual_challenges_data(
+            #     api
+            # ),
             "get_race_predictions": lambda: call_and_display(
                 api.get_race_predictions,
                 method_name="get_race_predictions",
@@ -691,8 +700,8 @@ def execute_api_call(api: Garmin, key: str) -> None:
                 method_name="get_all_day_events",
                 api_call_desc=f"api.get_all_day_events('{config.week_start.isoformat()}')",
             ),
-            "add_hydration_data": lambda: add_hydration_data_entry(api),
-            "set_blood_pressure": lambda: set_blood_pressure_data(api),
+            # "add_hydration_data": lambda: add_hydration_data_entry(api),
+            # "set_blood_pressure": lambda: set_blood_pressure_data(api),
             "get_menstrual_data_for_date": lambda: call_and_display(
                 api.get_menstrual_data_for_date,
                 config.today.isoformat(),
@@ -707,12 +716,12 @@ def execute_api_call(api: Garmin, key: str) -> None:
                 api_call_desc=f"api.get_menstrual_calendar_data('{config.week_start.isoformat()}', '{config.today.isoformat()}')",
             ),
             # Blood Pressure Management
-            "delete_blood_pressure": lambda: delete_blood_pressure_data(api),
+            # "delete_blood_pressure": lambda: delete_blood_pressure_data(api),
             # Activity Management
-            "set_activity_name": lambda: set_activity_name_data(api),
-            "set_activity_type": lambda: set_activity_type_data(api),
-            "create_manual_activity": lambda: create_manual_activity_data(api),
-            "delete_activity": lambda: delete_activity_data(api),
+            # "set_activity_name": lambda: set_activity_name_data(api),
+            # "set_activity_type": lambda: set_activity_type_data(api),
+            # "create_manual_activity": lambda: create_manual_activity_data(api),
+            # "delete_activity": lambda: delete_activity_data(api),
             "get_activities_by_date": lambda: call_and_display(
                 api.get_activities_by_date,
                 config.today.isoformat(),
@@ -721,8 +730,8 @@ def execute_api_call(api: Garmin, key: str) -> None:
                 api_call_desc=f"api.get_activities_by_date('{config.today.isoformat()}', '{config.today.isoformat()}')",
             ),
             # System & Export
-            "create_health_report": lambda: DataExporter.create_health_report(api),
-            "remove_tokens": lambda: remove_stored_tokens(),
+            # "create_health_report": lambda: DataExporter.create_health_report(api),
+            # "remove_tokens": lambda: remove_stored_tokens(),
             "disconnect": lambda: disconnect_api(api),
             # GraphQL Queries
             "query_garmin_graphql": lambda: query_garmin_graphql_data(api),
