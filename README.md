@@ -2,9 +2,6 @@
 
 ## TODO
 
-### general
-- faire disparaître .gitignore
-
 ### garminconnect
 - ajouter identification par token + stockage dans dossier data => une fois login avec .env pour la première fois
 
