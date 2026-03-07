@@ -231,7 +231,6 @@ def init_api() -> Garmin | None:
 
 def get_single_activity_data(api: Garmin, nb_of_days, data) -> None:
     try:
-        # get last 20 days activities
         data.append(api.get_activities(0, nb_of_days))
     except Exception as e:
         print(f"❌ Error getting single activity: {e}")
