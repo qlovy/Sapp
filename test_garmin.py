@@ -341,20 +341,20 @@ def _display_group(group_name: str, api_responses: list[tuple[str, Any]]):
         print("-" * 50)
 
     # Save grouped responses to file
-    try:
-        response_file = config.export_dir / "response.json"
-        header = "=" * 20 + f" {group_name} " + "=" * 20
-        footer = "=" * 77
-        content_lines = [header, *response_content_parts, footer, ""]
-        grouped_content = "\n".join(content_lines)
-        with response_file.open("w", encoding="utf-8") as f:
-            f.write(grouped_content)
+    # try:
+    #     response_file = config.export_dir / "response.json"
+    #     header = "=" * 20 + f" {group_name} " + "=" * 20
+    #     footer = "=" * 77
+    #     content_lines = [header, *response_content_parts, footer, ""]
+    #     grouped_content = "\n".join(content_lines)
+    #     with response_file.open("w", encoding="utf-8") as f:
+    #         f.write(grouped_content)
 
-        print(f"\n✅ Grouped responses saved to: {response_file}")
-        print("=" * 77)
+    #     print(f"\n✅ Grouped responses saved to: {response_file}")
+    #     print("=" * 77)
 
-    except Exception as e:
-        print(f"Error saving grouped responses: {e}")
+    # except Exception as e:
+    #     print(f"Error saving grouped responses: {e}")
 
 
 def format_timedelta(td):
