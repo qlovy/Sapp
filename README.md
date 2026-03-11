@@ -2,6 +2,9 @@
 
 ## TODO
 
+### flet
+- tester première application + affichage donnée
+
 ### garminconnect
 - ajouter identification par token + stockage dans dossier data => une fois login avec .env pour la première fois
 
