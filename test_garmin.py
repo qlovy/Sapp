@@ -239,8 +239,8 @@ class Config:
 
     def __init__(self):
         # Load environment variables
-        self.email = os.getenv("EMAIL")
-        self.password = os.getenv("PASSWORD")
+        self.email = os.getenv("GARMIN_EMAIL")
+        self.password = os.getenv("GARMIN_PASSWORD")
         #self.tokenstore = os.getenv("GARMINTOKENS") or "~/.garminconnect"
         # self.tokenstore_base64 = (
         #     os.getenv("GARMINTOKENS_BASE64") or "~/.garminconnect_base64"
@@ -915,22 +915,22 @@ def get_activity_gear_data(api: Garmin) -> None:
         print(f"❌ Error getting activity gear: {e}")
 
 
-def get_single_activity_data(api: Garmin) -> None:
-    """Get single activity data for the last activity."""
-    try:
-        activities = api.get_activities(0, 1)
-        if activities:
-            activity_id = activities[0]["activityId"]
-            call_and_display(
-                api.get_activity,
-                activity_id,
-                method_name="get_activity",
-                api_call_desc=f"api.get_activity({activity_id})",
-            )
-        else:
-            print("ℹ️ No activities found")
-    except Exception as e:
-        print(f"❌ Error getting single activity: {e}")
+# def get_single_activity_data(api: Garmin) -> None:
+#     """Get single activity data for the last activity."""
+#     try:
+#         activities = api.get_activities(0, 1)
+#         if activities:
+#             activity_id = activities[0]["activityId"]
+#             call_and_display(
+#                 api.get_activity,
+#                 activity_id,
+#                 method_name="get_activity",
+#                 api_call_desc=f"api.get_activity({activity_id})",
+#             )
+#         else:
+#             print("ℹ️ No activities found")
+#     except Exception as e:
+#         print(f"❌ Error getting single activity: {e}")
 
 
 def get_activity_exercise_sets_data(api: Garmin) -> None:
@@ -3027,7 +3027,7 @@ def main():
     f.write(str(data))
     f.close()
 
-    execute_api_call(api, "get_lactate_threshold")
+    print(execute_api_call(api, "get_lactate_threshold"))
     
 if __name__ == "__main__":
     try:
