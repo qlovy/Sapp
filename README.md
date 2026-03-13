@@ -2,7 +2,7 @@
 
 ## TODO
 
-### Expo
+### Flet
 - tester première application + affichage donnée
 
 ### garminconnect
@@ -40,6 +40,8 @@ Via Garmin Connect (wrapper python)
 
 Variable d'environnement avec https://pypi.org/project/python-dotenv/
 
+Installer Flet https://docs.flet.dev/getting-started/installation/
+
 ## Initialisation du projet
 ### 1. Installer Python
 
@@ -74,10 +76,7 @@ voir section Ressource, etape 1
 GARMIN_EMAIL="email"
 GARMIN_PASSWORD="password"
 ```
-## Utilisation Expo
+## Utilisation de flet
 
-Doc: https://docs.expo.dev/tutorial/create-your-first-app/
+lire README.mb dans Sapp/flet
 
-### 1. Utilisation d'expo 
-
-Lire le README.mb dans SAPP\Sapp_Expo
