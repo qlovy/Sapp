@@ -2,7 +2,7 @@
 
 ## TODO
 
-### flet
+### Expo
 - tester première application + affichage donnée
 
 ### garminconnect
@@ -74,3 +74,10 @@ voir section Ressource, etape 1
 GARMIN_EMAIL="email"
 GARMIN_PASSWORD="password"
 ```
+## Utilisation Expo
+
+Doc: https://docs.expo.dev/tutorial/create-your-first-app/
+
+### 1. Utilisation d'expo 
+
+Lire le README.mb dans SAPP\Sapp_Expo
